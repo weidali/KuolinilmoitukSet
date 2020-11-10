@@ -1,0 +1,21 @@
+.body{
+	
+}
+.wrapper{
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+.container{
+	max-width: 1180px;
+	margin: 0px auto;
+	flex: 1 1 auto;
+}
+.blog-footer {
+    padding: 1.1rem 0;
+    color: #777;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+}
