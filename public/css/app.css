@@ -19,3 +19,115 @@
     background-color: #f9f9f9;
     border-top: .05rem solid #e5e5e5;
 }
+#phase-container {
+    margin: 0 auto;
+    max-width: 1060px;
+    margin: 0 auto 0 auto;
+    padding: 0 0 20px 0;
+    position: relative;
+}
+#phase {
+    /*width: 780px;*/
+    float: left;
+    padding: 10px 0 50px 0;
+}
+#module {
+	line-height: 1.15;
+	font-family: 'The Message',sans-serif;
+	font-size: 100%;
+	-webkit-font-smoothing: antialiased;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.module {
+    background-color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+}
+.module:hover {
+    background-color: #fafafa;
+}
+.module-layout-normal {
+	line-height: 1.15;
+	font-family: 'The Message',sans-serif;
+	font-size: 100%;
+	-webkit-font-smoothing: antialiased;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	padding: 0;
+	text-align: center;
+	margin: 0;
+	clear: both;
+	width: 100%;
+}
+.module-layout-normal .module {
+    padding: 15px 12px 65px 12px;
+    margin: 6px;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #ddd;
+}
+.module-layout-normal .module-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    text-align: center;
+    border-spacing: 12px;
+    margin: -12px;
+}
+.module-layout-normal .module .name {
+    font-weight: 400;
+    font-size: .95em;
+    font-family: 'The Message Bold',sans-serif;
+    line-height: 1.2em;
+    margin: 0 0 .1em 0;
+}
+.module .name, .template .name {
+    color: #000;
+}
+.module-layout-normal .module .description-below {
+    font-size: .85em;
+    opacity: .7;
+    margin-bottom: 8px;
+}
+.module-layout-normal .module .prices {
+    margin-bottom: 7px;
+    color: #000;
+}
+.module-layout-normal .module .prices .price-row {
+    display: block;
+    clear: both;
+    white-space: nowrap;
+}
+.module-layout-normal .module .prices .days {
+    opacity: .7;
+    width: 52px;
+    display: inline-block;
+    text-align: right;
+    padding-right: .3em;
+}
+.module-layout-normal .module .button {
+    display: inline-block;
+    font-size: .8em;
+    line-height: 1.3em;
+    margin: 1.2em 0 0 0;
+    position: inherit;
+    margin: 0 auto;
+    padding: 7px 0 5px 0;
+    width: 60px;
+}
+.button, .offline-button {
+    background-color: #0072bb;
+    background-repeat: no-repeat;
+    border: 0;
+    font-family: 'The Message',sans-serif;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    white-space: nowrap;
+    border-radius: 2px;
+}
