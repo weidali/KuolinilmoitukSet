@@ -1,12 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', 'MainController@index');
+Route::get('/', [MainController::class, 'index']);
+Route::get('/{template}', [MainController::class, 'template']);
