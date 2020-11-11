@@ -13,6 +13,10 @@ class MainController extends Controller
 		return view('index', compact('templates'));
 	}
 
+	public function welcome() {
+		return view('welcome');
+	}
+
 	public function template($code) {
 		$template = Template::where('code', $code)->first();
 		return view('template', compact('template'));
