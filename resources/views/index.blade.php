@@ -1,57 +1,36 @@
 @extends('layouts.app')
 
-@section('title-block', 'Home')
+@section('title-block', 'Home Page')
 
 @section('content')
-<div class="row">
-	<div class="col-8">
-		
 
-<div class="phase-header">
-	<h2 class="phase-header-title">Valitse ilmoitusmalli</h2>
-	<div class="phase-intro">
-		<p>Valitse alla olevista malli-ilmoituksista joko yksi- tai kaksipalstainen.</p>
-	</div>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h2 class="display-4">Valitse ilmoitusmalli</h2>
+  <p class="lead">Valitse alla olevista malli-ilmoituksista joko yksi- tai kaksipalstainen.</p>
 </div>
-<div id="phase-container">
-	<div id="phase">
-		<div id="modules">
-			<div id="module-list" class="module-layout-normal module-list-kuolinilmoitukset">
-			  <div class="module-container">
-			  	@foreach($templates as $template)
-			  		<a href="{{ $template->code }}" class="focus module module-1097 module-columns-1" data-module-id="1097" style="max-width:286px">
-						<h3 class="name">{{ $template->name }}</h3>
-						<p class="description">{{ $template->description }}</p>
-						<p class="image"><img src="{{ $template->image }}" width="{{ $template->width * 2.3 }}" alt=""></p>
-						<p class="description-below">Esimerkki-ilmoituksen koko<br>
-						   {{ $template->width }} x {{ $template->height }} mm
-						</p>
-						<p class="prices">
-							<span class="price-row">
-								<span class="days">Ma-To!</span>
-								<span class="amount">{{ $template->price }}&nbsp;€</span>
-							</span>
-							<span class="price-row">
-								<span class="days">Pe-La</span>
-								<span class="amount">...&nbsp;€</span>
-							</span>
-							<span class="price-row">
-								<span class="days">Su</span>
-								<span class="amount">...&nbsp;€</span>
-							</span></p>
-						<span class="button">Valittu</span>
-					 </a>
-			  	@endforeach
-			  </div>
-			  <div class="clear"></div>
-		   </div>
+
+<div class="container">
+	<div class="card-deck mb-3 text-center">
+		@foreach($templates as $template)
+		<div class="card mb-4 shadow-sm">
+			<div class="card-header">
+				<h4 class="my-0 font-weight-normal">{{ $template->name }}</h4>
+			</div>
+			<div class="card-body">
+				<p class="description">{{ $template->description }}</p>
+				<p class="image"><img src="{{ $template->image }}" style="width:100%;" alt=""></p>
+				<ul class="list-unstyled mt-3 mb-4">
+					<li><small class="text-muted">Esimerkki-ilmoituksen koko</small><br>
+					{{ $template->width }} x {{ $template->height }} mm</li>
+				</ul>
+				<small class="text-muted">Ma-To</small>
+				<h5 class="card-title pricing-card-title">{{ $template->price }}&nbsp;€</h5>
+				<a href="{{ $template->code }}" class="btn btn-block btn-secondary"  >Valittu</a>
+			</div>
 		</div>
+		@endforeach
 	</div>
 </div>
-
-	</div>
-</div>
-
 
 <!-- @include('inc.questionnaire') -->
 @endsection

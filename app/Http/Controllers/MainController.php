@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
 	public function index() {
+		// dump(get_class_methods($request));
 		$templates = Template::get();
 		return view('index', compact('templates'));
 	}
