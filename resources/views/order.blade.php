@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title-block', $template->name)
+@section('title-block', 'name')
 @section('content')
 	<div class="container">
 		<div class="py-5 text-center">
@@ -7,31 +7,10 @@
 			<p class="lead">Ilmoituksen suunnittelu tehdään N osassa. Voit seurata ilmoituksen valmistumista esikatselukuvassa.</p>
 		</div>
 		<div class="row">
-			<div class="col-md-4 order-md-2 mb-4">
-				<h4 class="d-flex justify-content-between align-items-center mb-3">
-				<span class="text-muted">Esikatselu</span>
-				<span class="badge badge-secondary badge-pill">step 1</span>
-				</h4>
-				<ul class="list-group mb-3">
-					<li class="list-group-item d-flex justify-content-between lh-condensed">
-						<div>
-							<h6 class="my-0">Template name</h6>
-						</div>
-						<span class="text-muted">{{ $template->name }}</span>
-					</li>
-					<li class="list-group-item d-flex justify-content-between lh-condensed">
-						<div>
-							<p class="image"><img src="{{ $template->image }}" style="width:100%;" alt=""></p>
-						</div>
-						
-					</li>
-				</ul>
-			</div>
-
-			<div class="col-md-8 order-md-1">
+			<div class="col-md-12 order-md-1">
 				<h4 class="mb-2">Vainajan tiedot</h4>
 				<p class="mb-3">Täytä ilmoitukseen tulevat vainajan tiedot. Pakolliset tiedot on merkitty tähdellä.</p>
-				<form class="needs-validation" action="{{ route('order-form') }}" method="post">
+				<form class="needs-validation" action="{{ route('order_form') }}" method="post">
 					@csrf
 					<fieldset class="form-group">
 						<div class="row">
@@ -161,44 +140,5 @@
 			</div>
 		</div>
 	</div>
-	<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-	<script src="form-validation.js"></script> -->
-<!-- <div class="row">
-		<div class="col-8">
-				<div class="phase-header">
-						<h2 class="phase-header-title">{{ $template->name }}</h2>
-						<div class="phase-intro">
-								<p>Valitse alla olevista malli-ilmoituksista joko yksi- tai kaksipalstainen.</p>
-						</div>
-				</div>
-		</div>
-</div>
-<div class="row">
-		<div class="col-3">
-				<div class="module-container">
-							
-						<h3 class="name">{{ $template->name }}</h3>
-						<p class="description">{{ $template->description }}</p>
-						<p class="image"><img src="{{ $template->image }}" width="{{ $template->width * 2.3 }}" alt=""></p>
-						<p class="description-below">Esimerkki-ilmoituksen koko<br>
-							{{ $template->width }} x {{ $template->height }} mm
-						</p>
-						<p class="prices">
-								<span class="price-row">
-										<span class="days">Ma-To</span>
-										<span class="amount">{{ $template->price }}&nbsp;€</span>
-								</span>
-								<span class="price-row">
-										<span class="days">Pe-La</span>
-										<span class="amount">524,97&nbsp;€</span>
-								</span>
-								<span class="price-row">
-										<span class="days">Su</span>
-										<span class="amount">605,52&nbsp;€</span>
-								</span>
-						</p>
-				</div>
-		</div>
-</div> -->
+
 @endsection

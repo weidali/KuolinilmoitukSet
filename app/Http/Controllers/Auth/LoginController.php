@@ -8,22 +8,43 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
-	/*
-	|--------------------------------------------------------------------------
-	| Login Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller handles authenticating users for the application and
-	| redirecting them to your home screen. The controller uses a trait
-	| to conveniently provide its functionality to your applications.
-	|
-	*/
+
 
 	use AuthenticatesUsers;
 
-	protected function redirectTo() {
-		return route('panel');
+	protected function redirectTo()
+	{
+		$user = \Auth::user();
+		if($user->isAdmin()) {
+			return route('panel');
+		} else {
+			return route('index');
+		}
 	}
+	// /**
+ // 	* @return string
+ // 	**/
+	// public function redirectTo()
+	// {
+
+	//     /** @var User $user */
+	//     $user = Auth::user();
+
+	//     if( !$user ) {
+	//         abort(403, "Something went completely wrong");
+	//     }
+
+	//     switch( $user->role ) {
+	//         case User::SUPERADMIN:
+	//             return '/admin';
+	//         case User::CASUAL:
+	//             return !!$user->bdate ? '/tests' : '/profile';
+	//         case USER::COMPANY:
+	//             return '/dashboard';
+	//         default:
+	//             abort(403, "Something went wrong");
+	//     }
+	// }
 
 	/**
 	 * Where to redirect users after login.

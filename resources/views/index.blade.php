@@ -4,6 +4,7 @@
 
 @section('content')
 
+
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h2 class="display-4">Valitse ilmoitusmalli</h2>
   <p class="lead">Valitse alla olevista malli-ilmoituksista joko yksi- tai kaksipalstainen.</p>
@@ -25,12 +26,15 @@
 				</ul>
 				<small class="text-muted">Ma-To</small>
 				<h5 class="card-title pricing-card-title">{{ $template->price }}&nbsp;€</h5>
-				<a href="{{ $template->code }}" class="btn btn-block btn-secondary"  >Valittu</a>
+				<form action="{{ route('template_add', $template->id) }}" method="POST">
+					@csrf
+					<button type="submit" class="btn btn-block btn-secondary">Valittu</button>
+				</form>
+				
 			</div>
 		</div>
 		@endforeach
 	</div>
 </div>
 
-<!-- @include('inc.questionnaire') -->
 @endsection

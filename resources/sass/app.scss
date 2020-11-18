@@ -6,3 +6,11 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #6d757d;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(108,117,125,.25);
+}
